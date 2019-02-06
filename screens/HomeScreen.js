@@ -40,30 +40,18 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.getStartedText}>
               Core concepts in React Native, demonstrated and annotated.
             </Text>
-
           </View>
-
-       
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
-            This is a tab bar. You can edit it in:
+            Click a topic below, to see a demonstration.
           </Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.navigationFilename]}
-          >
-            <MonoText style={styles.codeHighlightText}>
-              navigation/MainTabNavigator.js
-            </MonoText>
-          </View>
         </View>
       </View>
     );
   }
-
-  }
+}
 
 const styles = StyleSheet.create({
   container: {

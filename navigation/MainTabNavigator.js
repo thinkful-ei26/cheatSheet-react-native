@@ -4,15 +4,70 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import PropsScreen from '../screens/PropScreen';
+import FlexboxScreen from '../screens/Flexbox'
+import StateScreen from '../screens/StateScreen'
+import StyleScreen from '../screens/StyleScreen'
+import HeightWidthScreen from '../screens/HeightWidth'
+
+const HeightWidthStack = createStackNavigator({
+  HeightWidth: HeightWidthScreen
+})
+HeightWidthStack.navigationOptions = {
+  tabBarLabel: 'Height & Width',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+const StyleStack = createStackNavigator({
+  Style: StyleScreen
+})
+StyleStack.navigationOptions = {
+  tabBarLabel: 'Styles',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
+const FlexboxStack = createStackNavigator({
+  Flex: FlexboxScreen
+})
+FlexboxStack.navigationOptions = {
+  tabBarLabel: 'Flexbox',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+const StateStack =createStackNavigator({
+  State: StateScreen,
+})
+StateStack.navigationOptions = {
+  tabBarLabel: 'State',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
+
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: 'HangaBanga',
+  tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,12 +80,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const PropStack = createStackNavigator({
+  Props: PropsScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+PropStack.navigationOptions = {
+  tabBarLabel: 'Props',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -39,22 +94,12 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
 
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  PropStack,
+  FlexboxStack,
+  StateStack,
+  StyleStack,
+  HeightWidthStack,
 });
