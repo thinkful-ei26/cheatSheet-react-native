@@ -99,14 +99,6 @@ const styles = StyleSheet.create({
   homeScreenFilename: {
     marginVertical: 7
   },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)'
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4
-  },
   getStartedText: {
     fontSize: 17,
     color: 'rgba(96,100,109, 1)',
